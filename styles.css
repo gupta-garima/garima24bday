@@ -185,21 +185,20 @@ body {
 
 @media (max-width: 768px) {
     .page-border {
-        border-width: 6px;
-        top: 10px;
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
+        border-width: 8px;
+        /* Slightly thicker */
+        top: 6px;
+        left: 6px;
+        right: 6px;
+        bottom: 6px;
     }
 
     .app-container {
-        padding: 20px;
-        margin: 30px auto;
-        /* Increased to sit clear of border */
-        width: calc(100% - 60px);
-        /* 100% - (2 * margin) */
+        padding: 20px 15px;
+        margin: 15px auto;
+        width: calc(100% - 30px);
+        /* Much less side white space */
         box-sizing: border-box;
-        /* Fix centering issue */
     }
 
     .header-container {
@@ -219,8 +218,20 @@ body {
     }
 
     .header-main {
-        font-size: 2.5rem;
-        /* Better fit for mobile */
+        font-size: 1.8rem;
+        /* Smaller, more elegant */
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+        /* Smaller text */
+        margin-bottom: 20px;
+    }
+
+    .section-card h2,
+    .section-card h3 {
+        font-size: 1.25rem !important;
+        /* Smaller card titles */
     }
 
     .main-content {
@@ -273,20 +284,28 @@ body {
         min-width: 100%;
     }
 
-    /* Center all section cards */
-    .section-card {
-        text-align: center;
-    }
-
     /* Constrain spinner to fit within mobile container */
     .wheel-container {
-        max-width: 280px;
+        max-width: 300px;
+        /* Slightly larger for the zoom effect */
+        width: 100%;
+        margin: 0 auto 20px;
+        display: block;
+    }
+
+    #wheelCanvas {
+        width: 100% !important;
+        height: auto !important;
+        display: block;
         margin: 0 auto;
-        overflow: hidden;
     }
 
     .spinner-section {
-        overflow: hidden;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 }
 
