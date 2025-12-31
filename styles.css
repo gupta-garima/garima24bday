@@ -318,8 +318,7 @@ body {
 
     /* Constrain spinner to fit within mobile container */
     .wheel-container {
-        max-width: 280px;
-        /* Reduced from 300px to fit iPhone 13 Pro */
+        max-width: 300px;
         width: 100%;
         aspect-ratio: 1 / 1;
         margin-left: auto !important;
@@ -338,9 +337,8 @@ body {
     .spinner-section {
         width: 100%;
         max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: block !important;
+        /* Changed from flex to block to match entry-card */
         text-align: center;
         padding: 0 !important;
         margin: 0 auto !important;
