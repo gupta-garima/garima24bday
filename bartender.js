@@ -69,8 +69,10 @@ function renderQueue() {
     const counterDisplay = document.getElementById('barQueueCount');
     console.log("Counter Display found:", counterDisplay);
 
+    const pendingCount = queue.filter(item => item.status === 'pending').length;
+
     if (counterDisplay) {
-        counterDisplay.textContent = `(${queue.length})`;
+        counterDisplay.textContent = `(${pendingCount})`;
     }
 
     if (queue.length === 0) {
@@ -99,7 +101,7 @@ function renderQueue() {
             totalHeader.style.marginBottom = '10px';
             totalHeader.style.fontWeight = 'bold';
             totalHeader.style.color = '#d4a017'; // Dark Gold
-            totalHeader.textContent = `Total Pending: ${queue.length}`;
+            totalHeader.textContent = `Total Pending: ${pendingCount}`;
             summaryDiv.appendChild(totalHeader);
 
             Object.keys(counts).forEach(drink => {
