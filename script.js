@@ -47,7 +47,7 @@ let drinks = [
     "SECRET",
     "GG SHOT - Tequila",
     "GG SHOT - VODKA",
-    "GG SHOT - BABY GUINESS"
+    "GG SHOT - BABY GUINNESS"
 ];
 
 let startAngle = 0;
