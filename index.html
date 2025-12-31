@@ -69,6 +69,8 @@
                 </div>
                 <div class="controls">
                     <button id="spinBtn" class="spin-btn">SPIN</button>
+                    <button id="viewMenuBtn" class="secondary-btn" style="margin-top: 15px; display: block;">View Drink
+                        Menu 🥂</button>
                 </div>
             </div>
 
@@ -131,11 +133,83 @@
                     Queue & Close</button>
                 <button id="closeResultBtn" class="secondary-btn" style="width: 100%;">Just Close</button>
             </div>
-        </div>
-    </div>
+            <!-- Drink Menu Modal -->
+            <div id="menuModal" class="modal hidden">
+                <div class="modal-content botanical-modal menu-modal-content" style="max-width: 500px;">
+                    <span id="closeMenuBtn" class="close-modal">&times;</span>
+                    <h2 class="header-script" style="font-size: 3.5rem; margin-bottom: 5px;">The Drink Menu</h2>
+                    <p style="margin-bottom: 20px; font-family: var(--font-serif); font-style: italic; opacity: 0.8;">
+                        Garima’s Birthday Selection</p>
 
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script src="script.js?v=10"></script>
+                    <div class="menu-items-scroll"
+                        style="max-height: 60vh; overflow-y: auto; text-align: left; padding: 0 10px;">
+                        <div class="menu-item"
+                            style="margin-bottom: 20px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 10px;">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                                <h3 style="margin: 0; font-family: var(--font-serif); color: var(--primary-dark);">
+                                    GARIMAPOLITAN</h3>
+                                <span
+                                    style="font-size: 0.7rem; background: var(--primary-color); padding: 2px 8px; border-radius: 10px; font-weight: bold;">PICK!</span>
+                            </div>
+                            <p style="margin: 5px 0 0; font-size: 0.9rem;">vodka, cointreau, lime juice, cranberry juice
+                            </p>
+                        </div>
+
+                        <div class="menu-item"
+                            style="margin-bottom: 20px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 10px;">
+                            <h3 style="margin: 0; font-family: var(--font-serif);">THAT’S THAT ME, ESPRESSO</h3>
+                            <p style="margin: 5px 0 0; font-size: 0.9rem;">vodka, fresh espresso shot, coffee liqueur,
+                                simple syrup</p>
+                        </div>
+
+                        <div class="menu-item"
+                            style="margin-bottom: 20px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 10px;">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                                <h3 style="margin: 0; font-family: var(--font-serif); color: var(--accent-dark);">
+                                    MABUHAY!</h3>
+                                <span
+                                    style="font-size: 0.7rem; background: var(--accent-light); padding: 2px 8px; border-radius: 10px; font-weight: bold;">UBE!</span>
+                            </div>
+                            <p style="margin: 5px 0 0; font-size: 0.9rem;">vodka, fresh espresso shot, ube liqueur,
+                                coffee liqueur, simple syrup</p>
+                        </div>
+
+                        <div class="menu-item"
+                            style="margin-bottom: 20px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 10px;">
+                            <h3 style="margin: 0; font-family: var(--font-serif);">SMISKI SPECIAL</h3>
+                            <p style="margin: 5px 0 0; font-size: 0.9rem;">midori melon liqueur, vodka, cointreau, lemon
+                                juice</p>
+                        </div>
+
+                        <div class="menu-item"
+                            style="margin-bottom: 20px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 10px;">
+                            <h3 style="margin: 0; font-family: var(--font-serif);">24K</h3>
+                            <p style="margin: 5px 0 0; font-size: 0.9rem;">whiskey, lemon juice, simple syrup</p>
+                        </div>
+
+                        <div class="menu-item"
+                            style="margin-bottom: 20px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 10px;">
+                            <h3 style="margin: 0; font-family: var(--font-serif);">ROULETTE OR RODEO</h3>
+                            <p style="margin: 5px 0 0; font-size: 0.9rem;">vodka or tequila, lime juice, ginger beer</p>
+                        </div>
+
+                        <div class="menu-item"
+                            style="margin-bottom: 20px; border-bottom: 1px dashed rgba(0,0,0,0.1); padding-bottom: 10px;">
+                            <h3 style="margin: 0; font-family: var(--font-serif); font-style: italic;">SECRET</h3>
+                            <p style="margin: 5px 0 0; font-size: 0.9rem; font-style: italic;">Spin to find out...</p>
+                        </div>
+
+                        <div class="menu-item" style="margin-bottom: 10px;">
+                            <h3 style="margin: 0; font-family: var(--font-serif);">GG SHOTS</h3>
+                            <p style="margin: 5px 0 0; font-size: 0.9rem;">Tequila • Vodka • Baby Guinness</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+        <script src="script.js?v=11"></script>
 </body>
 
 </html>

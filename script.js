@@ -35,6 +35,9 @@ const closeResultBtn = document.getElementById('closeResultBtn');
 const saveListBtn = document.getElementById('saveListBtn');
 const drinkInput = document.getElementById('drinkInput');
 const resultDrinkName = document.getElementById('resultDrinkName');
+const menuModal = document.getElementById('menuModal');
+const viewMenuBtn = document.getElementById('viewMenuBtn');
+const closeMenuBtn = document.getElementById('closeMenuBtn');
 
 // Main Drink List (v10)
 let drinks = [
@@ -226,6 +229,21 @@ if (saveListBtn) saveListBtn.addEventListener('click', () => {
 
 if (closeResultBtn) closeResultBtn.addEventListener('click', () => {
     resultModal.classList.add('hidden');
+});
+
+if (viewMenuBtn) viewMenuBtn.addEventListener('click', () => {
+    menuModal.classList.remove('hidden');
+});
+
+if (closeMenuBtn) closeMenuBtn.addEventListener('click', () => {
+    menuModal.classList.add('hidden');
+});
+
+// Close menu modal when clicking outside
+window.addEventListener('click', (e) => {
+    if (e.target === menuModal) {
+        menuModal.classList.add('hidden');
+    }
 });
 
 // Queue System Logic
