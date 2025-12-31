@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garima's Drink Spinner - Bartender</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <style>
+        .bartender-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .queue-item {
+            padding: 20px;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            /* Added spacing */
+        }
+
+        .complete-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .complete-btn:hover {
+            opacity: 0.9;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 50px;
+            font-size: 1.2rem;
+        }
+
+        .order-summary {
+            background: #fffef7;
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .summary-tag {
+            background: var(--primary-color);
+            color: var(--text-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bartender-container">
+        <header>
+            <h1>🦋 Garima's Bar <span id="barQueueCount" style="font-size: 0.6em; opacity: 0.7;">(0)</span></h1>
+            <p>Current Orders 🥂</p>
+        </header>
+
+        <div id="orderSummary" class="order-summary">
+            <!-- Counts will appear here -->
+        </div>
+
+        <ul id="bartenderQueueList" style="list-style: none; padding: 0;">
+            <!-- Queue items -->
+        </ul>
+
+        <div id="emptyState" class="empty-state hidden">No drinks in queue</div>
+
+        <div style="margin-top: 40px; text-align: center;">
+            <a href="index.html" class="secondary-btn">Back to Spinner</a>
+        </div>
+    </div>
+
+    <script src="bartender.js"></script>
+</body>
+
+</html>

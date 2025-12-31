@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garima's Drink Spinner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+</head>
+
+<body>
+    <!-- Guest Check-in Modal -->
+    <div id="checkInModal" class="modal">
+        <div class="modal-content botanical-modal">
+            <h2 class="header-script" style="font-size: 3rem; margin-bottom: 5px;">Welcome!</h2>
+            <p style="margin-bottom: 25px; font-family: var(--font-serif); font-style: italic;">What's your name for the
+                guest list?</p>
+            <div class="queue-input-group">
+                <input type="text" id="checkInNameInput" placeholder="Enter your name..." style="text-align: center;">
+                <button id="confirmCheckInBtn" class="primary-btn">Join the Party ✨</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notificationToast" class="notification-toast hidden">
+        <div class="notification-content">
+            <span class="notification-icon">🥂</span>
+            <div class="notification-text">
+                <strong id="notifTitle">Drink's Ready!</strong>
+                <p id="notifMessage">Head to the bar to pick up your order.</p>
+            </div>
+            <button class="notif-close">&times;</button>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <!-- Botanical Corners (Relative to Container) -->
+        <img src="corner_tl.png" class="viewport-corner top-left" alt="">
+        <img src="corner_tr.png" class="viewport-corner top-right" alt="">
+        <img src="corner_bl.png" class="viewport-corner bottom-left" alt="">
+        <img src="corner_br.png" class="viewport-corner bottom-right" alt="">
+
+        <header class="header-container">
+            <img src="champagne_decor.png" class="header-icon left" alt="">
+            <div class="header-content">
+                <div class="header-script">Garima's</div>
+                <div class="header-sub">24th</div>
+                <div class="header-main">OPEN BAR</div>
+            </div>
+            <img src="champagne_decor.png" class="header-icon right" alt="">
+        </header>
+
+        <main class="main-content">
+            <div class="left-column">
+                <p class="subtitle">Unsure? Let the spin decide ur fate ✨</p>
+                <div class="wheel-container">
+                    <canvas id="wheelCanvas" width="500" height="500"></canvas>
+                    <div class="pointer"></div>
+                </div>
+                <div class="controls">
+                    <button id="spinBtn" class="spin-btn">SPIN</button>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="section-card entry-card">
+                    <h2>Add to Queue</h2>
+                    <div class="queue-input-group">
+                        <input type="text" id="queueNameInput" placeholder="Your Name">
+                        <select id="queueDrinkSelect">
+                            <option value="" disabled selected>Select Drink...</option>
+                        </select>
+                        <button id="addToQueueBtn" class="primary-btn small">Add</button>
+                    </div>
+                </div>
+
+                <div class="section-card queue-card">
+                    <h3 style="color: var(--primary-color); margin-top: 0;">Current Queue <span id="queueCount"
+                            style="font-size: 0.8em; opacity: 0.7;">(0)</span></h3>
+                    <ul id="queueList">
+                        <!-- Queue items will appear here -->
+                    </ul>
+                </div>
+
+                <div class="drink-list-section"
+                    style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                    <a href="bartender.html" class="secondary-btn small"
+                        style="text-decoration: none; display: inline-block;">Bartender View</a>
+                    <button id="editListBtn"
+                        style="background: none; border: none; color: var(--text-muted); font-size: 0.8rem; opacity: 0.7; cursor: pointer; padding: 5px; text-decoration: underline;">Edit
+                        Drinks</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Edit List Modal -->
+    <div id="editModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Edit Drink List</h2>
+            <textarea id="drinkInput" placeholder="Enter drinks, one per line..."></textarea>
+            <button id="saveListBtn" class="primary-btn">Save & Update</button>
+        </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div id="resultModal" class="modal hidden">
+        <div class="modal-content result-content">
+            <h2>You got:</h2>
+            <h1 id="resultDrinkName" class="glow-text"></h1>
+
+            <div style="margin-top: 20px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 20px;">
+                <p style="margin-bottom: 10px;">Want this drink?</p>
+                <div class="queue-input-group" style="margin-bottom: 10px;">
+                    <input type="text" id="resultNameInput" placeholder="Enter your Name"
+                        style="width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                <button id="addResultToQueueBtn" class="primary-btn" style="width: 100%; margin-bottom: 10px;">Add
+                    to
+                    Queue & Close</button>
+                <button id="closeResultBtn" class="secondary-btn" style="width: 100%;">Just Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
