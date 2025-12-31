@@ -22,6 +22,12 @@
     --font-sans: 'Outfit', sans-serif;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     position: relative;
     margin: 0;
