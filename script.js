@@ -475,16 +475,14 @@ if (showQrBtn) {
     showQrBtn.addEventListener('click', () => {
         qrModal.classList.remove('hidden');
         qrContainer.innerHTML = ''; // Clear previous
-        if (typeof QRCode !== 'undefined') {
-            new QRCode(qrContainer, {
-                text: window.location.href, // Current URL
-                width: 200,
-                height: 200,
-                colorDark: "#2e6a3f", // Leaf Green
-                colorLight: "#ffffff",
-                correctLevel: QRCode.CorrectLevel.H
-            });
-        }
+        new QRCode(qrContainer, {
+            text: `https://gupta-garima.github.io/garima24bday/`,
+            width: 128,
+            height: 128,
+            colorDark: "#1a1a1a",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
     });
 }
 
