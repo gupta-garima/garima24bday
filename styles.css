@@ -196,6 +196,8 @@ body {
         padding: 40px 20px;
         margin: 20px auto;
         width: calc(100% - 40px);
+        box-sizing: border-box;
+        /* Fix centering issue */
     }
 
     .header-container {
@@ -221,13 +223,33 @@ body {
 
     .main-content {
         flex-direction: column;
+        display: flex;
+    }
+
+    /* Mobile reordering: Add to Queue first, then Spinner, then Drink Queue */
+    .queue-section-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .entry-card {
+        order: 1;
+        /* Add to Queue appears first */
+    }
+
+    .spinner-section {
+        order: 2;
+        /* Spinner appears second */
+    }
+
+    .queue-card {
+        order: 3;
+        /* Drink Queue appears third */
     }
 
     .left-column,
     .right-column {
         min-width: 100%;
-        order: unset;
-        /* Stack naturally */
     }
 }
 
