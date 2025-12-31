@@ -206,7 +206,8 @@ body {
     .spinner-section {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;    /* center horizontally */
+        align-items: center !important;
+        /* center horizontally */
         justify-content: center !important;
         text-align: center !important;
         width: 100% !important;
@@ -223,8 +224,10 @@ body {
     }
 
     .left-column {
-        min-width: 0 !important;   /* remove min-width restriction */
-        width: 100% !important;    /* force full width */
+        min-width: 0 !important;
+        /* remove min-width restriction */
+        width: 100% !important;
+        /* force full width */
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
@@ -294,10 +297,12 @@ body {
     }
 
     .main-content {
-    flex-direction: column;
-    align-items: center; /* center all child sections */
-    gap: 20px; /* reduced gap for mobile */
-}
+        flex-direction: column;
+        align-items: center;
+        /* center all child sections */
+        gap: 20px;
+        /* reduced gap for mobile */
+    }
 
     /* Mobile reordering: Add to Queue → Spinner → Drink Queue → Bartender/Edit */
 
@@ -315,14 +320,17 @@ body {
     }
 
     .left-column.spinner-section {
-        order: 2 !important;       /* spinner appears second */
+        order: 2 !important;
+        /* spinner appears second */
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important; /* centers wheel, button, subtitle */
+        align-items: center !important;
+        /* centers wheel, button, subtitle */
         justify-content: center !important;
         text-align: center !important;
         width: 100% !important;
-        max-width: 350px !important;   /* prevents overflow on small screens */
+        max-width: 350px !important;
+        /* prevents overflow on small screens */
         margin: 0 auto !important;
         padding: 0 !important;
     }
@@ -347,15 +355,16 @@ body {
     }
 
     .wheel-container {
-    width: 90%;
-    max-width: 320px; /* adjust to fit mobile nicely */
-    aspect-ratio: 1/1;
-    margin: 0 auto 20px;
-}
+        width: 90%;
+        max-width: 320px;
+        /* adjust to fit mobile nicely */
+        aspect-ratio: 1/1;
+        margin: 0 auto 20px;
+    }
 
     #wheelCanvas {
         width: 100% !important;
-        height: auto !important;
+        height: 100% !important;
         display: block;
         margin: 0 auto;
     }
@@ -363,7 +372,8 @@ body {
 
     .spinner-section {
         width: 100% !important;
-        max-width: 350px !important;  /* optional: prevent overflow */
+        max-width: 350px !important;
+        /* optional: prevent overflow */
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
