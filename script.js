@@ -71,7 +71,22 @@ const colors = [
     "#b39ddb", // Light Purple
 ];
 
+// Resize canvas to match its display size
+function resizeCanvas() {
+    const displayWidth = canvas.clientWidth;
+    const displayHeight = canvas.clientHeight;
+
+    // Check if the canvas is not the same size
+    if (canvas.width !== displayWidth || canvas.height !== displayHeight) {
+        canvas.width = displayWidth;
+        canvas.height = displayHeight;
+        return true; // Canvas was resized
+    }
+    return false; // No resize needed
+}
+
 function drawWheel() {
+    resizeCanvas(); // Call resize function before drawing
     arc = Math.PI * 2 / drinks.length;
 
     // Get actual canvas dimensions for responsive centering
@@ -494,10 +509,18 @@ if (resultNameInput) resultNameInput.addEventListener('keypress', (e) => {
 });
 
 // Initial draw & populate
+resizeCanvas(); // Resize canvas to match display size
 drawWheel();
 populateDrinkDropdown();
 initGuestFlow();
 // renderQueue called by Firebase listener
+
+// Handle window resize (orientation changes, etc.)
+window.addEventListener('resize', () => {
+    if (resizeCanvas()) {
+        drawWheel(); // Redraw if canvas was resized
+    }
+});
 
 // QR Code Logic
 const showQrBtn = document.getElementById('showQrBtn');
