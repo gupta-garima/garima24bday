@@ -194,9 +194,9 @@ body {
 
     .app-container {
         padding: 20px;
-        margin: 25px auto;
-        /* Increased to sit INSIDE border */
-        width: calc(100% - 50px);
+        margin: 30px auto;
+        /* Increased to sit clear of border */
+        width: calc(100% - 60px);
         /* 100% - (2 * margin) */
         box-sizing: border-box;
         /* Fix centering issue */
@@ -244,46 +244,59 @@ body {
         order: 1;
         /* Add to Queue appears first */
         width: 100%;
+        box-sizing: border-box;
     }
 
     .left-column.spinner-section {
         order: 2 !important;
-        /* Spinner appears second (between the queue sections) */
+        /* Spinner appears second */
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .queue-card {
         order: 3;
-        /* Drink Queue appears third (after spinner) */
+        /* Drink Queue appears third */
         width: 100%;
+        box-sizing: border-box;
     }
 
-    .bottom-links-section {
-        order: 4;
-        /* Bartender/Edit buttons appear last */
-        width: 100%;
-        text-align: center;
-    }
+    /* Spinner appears second (between the queue sections) */
+}
 
-    .left-column,
-    .right-column {
-        min-width: 100%;
-    }
+.queue-card {
+    order: 3;
+    /* Drink Queue appears third (after spinner) */
+    width: 100%;
+}
 
-    /* Center all section cards */
-    .section-card {
-        text-align: center;
-    }
+.bottom-links-section {
+    order: 4;
+    /* Bartender/Edit buttons appear last */
+    width: 100%;
+    text-align: center;
+}
 
-    /* Constrain spinner to fit within mobile container */
-    .wheel-container {
-        max-width: 280px;
-        margin: 0 auto;
-        overflow: hidden;
-    }
+.left-column,
+.right-column {
+    min-width: 100%;
+}
 
-    .spinner-section {
-        overflow: hidden;
-    }
+/* Center all section cards */
+.section-card {
+    text-align: center;
+}
+
+/* Constrain spinner to fit within mobile container */
+.wheel-container {
+    max-width: 280px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.spinner-section {
+    overflow: hidden;
+}
 }
 
 header {
