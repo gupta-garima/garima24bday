@@ -201,6 +201,27 @@ body {
         bottom: -30px;
         right: -30px;
     }
+
+    /* Fix spinner + subtitle + button centering on mobile */
+    .spinner-section {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;    /* center horizontally */
+        justify-content: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    .spinner-section .subtitle,
+    .spinner-section .controls {
+        width: 100%;
+        text-align: center !important;
+        margin: 0 auto 15px !important;
+    }
+
 }
 
 @media (max-width: 1024px) {
@@ -318,8 +339,8 @@ body {
 
     /* Constrain spinner to fit within mobile container */
     .wheel-container {
-        max-width: 300px;
         width: 90%;
+        max-width: 300px;
         aspect-ratio: 1 / 1;
         margin: 0 auto 20px;
         display: block;
