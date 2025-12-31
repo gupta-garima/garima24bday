@@ -693,6 +693,7 @@ header h1 {
 
 .menu-modal-content {
     background-image: none !important;
+    border: 4px solid var(--primary-color);
 }
 
 .close-modal {
