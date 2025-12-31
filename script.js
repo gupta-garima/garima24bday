@@ -278,8 +278,20 @@ function showNotification(title, message) {
     document.getElementById('notifMessage').textContent = message;
     notificationToast.classList.remove('hidden');
 
+    // confetti burst!
+    if (typeof confetti !== 'undefined') {
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    }
+
     // Play sound if possible
-    try { new Audio('https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3').play(); } catch (e) { }
+    try {
+        const audio = new Audio('https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3'); // Shorter, punchier sound
+        audio.play();
+    } catch (e) { console.error("Sound play failed", e); }
 
     setTimeout(() => {
         notificationToast.classList.add('hidden');
@@ -309,7 +321,9 @@ if (db) {
                 queue.push(order);
 
                 // Trigger notification if order is ready and belongs to this guest
-                if (order.name === guestName && order.status === 'ready' && !order.notified) {
+                if (order.name && guestName &&
+                    order.name.toLowerCase().trim() === guestName.toLowerCase().trim() &&
+                    order.status === 'ready' && !order.notified) {
                     showNotification("Your Drink's Ready! 🥂", `Your ${order.drink} is waiting at the bar!`);
                     db.ref(`orders/${id}/notified`).set(true);
                 }
