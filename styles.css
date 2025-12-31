@@ -227,19 +227,19 @@ body {
     .main-content {
         flex-direction: column;
         display: flex;
-        gap: 20px;
-        /* Reduced gap between sections */
+        gap: 15px;
+        /* Further reduced gap */
     }
 
     /* Mobile reordering: Add to Queue first, then Spinner, then Drink Queue */
-    .right-column {
-        order: 1;
-        /* Queue sections appear first */
+    .left-column.spinner-section {
+        order: 2 !important;
+        /* Force spinner to appear second */
     }
 
-    .spinner-section {
-        order: 2;
-        /* Spinner appears second */
+    .right-column.queue-section-container {
+        order: 1 !important;
+        /* Force queue sections to appear first */
     }
 
     .queue-section-container {
