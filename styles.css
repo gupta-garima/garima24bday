@@ -144,6 +144,8 @@ body {
 
 @media (max-width: 768px) {
     .viewport-corner {
+        display: block !important;
+        /* Force visibility */
         width: 150px;
         /* Much smaller on mobile */
         opacity: 0.7;
