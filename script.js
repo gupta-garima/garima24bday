@@ -36,6 +36,7 @@ const saveListBtn = document.getElementById('saveListBtn');
 const drinkInput = document.getElementById('drinkInput');
 const resultDrinkName = document.getElementById('resultDrinkName');
 
+// Main Drink List (v10)
 let drinks = [
     "GARIMAPOLITAN",
     "THAT’S THAT ME, ESPRESSO",
