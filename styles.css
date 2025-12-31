@@ -193,8 +193,8 @@ body {
     }
 
     .app-container {
-        padding: 20px 12px;
-        margin: 10px auto;
+        padding: 20px;
+        margin: 10px;
         width: calc(100% - 20px);
         box-sizing: border-box;
         /* Fix centering issue */
