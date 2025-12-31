@@ -74,14 +74,19 @@ const colors = [
 function drawWheel() {
     arc = Math.PI * 2 / drinks.length;
 
-    // Clear canvas
-    ctx.clearRect(0, 0, 500, 500);
+    // Get actual canvas dimensions for responsive centering
+    const canvasWidth = canvas.width;
+    const canvasHeight = canvas.height;
 
-    const outsideRadius = 240;
-    const textRadius = 170;
+    // Clear canvas
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+    // Calculate responsive dimensions
+    const centerX = canvasWidth / 2;
+    const centerY = canvasHeight / 2;
+    const outsideRadius = Math.min(canvasWidth, canvasHeight) / 2 - 10; // 10px padding
+    const textRadius = outsideRadius * 0.7; // 70% of radius for text
     const insideRadius = 0;
-    const centerX = 250;
-    const centerY = 250;
 
     for (let i = 0; i < drinks.length; i++) {
         const angle = startAngle + i * arc;
