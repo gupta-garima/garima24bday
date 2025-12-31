@@ -318,6 +318,7 @@ body {
     .wheel-container {
         max-width: 300px;
         width: 100%;
+        aspect-ratio: 1 / 1; /* Maintain square shape */
         margin-left: auto !important;
         margin-right: auto !important;
         margin-bottom: 20px;
@@ -326,7 +327,7 @@ body {
 
     #wheelCanvas {
         width: 100% !important;
-        height: auto !important;
+        height: 100% !important; /* Changed from auto to 100% to maintain aspect ratio */
         display: block;
         margin: 0 auto;
     }
@@ -336,6 +337,11 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
+    }
+    
+    .subtitle {
+        width: 100%;
         text-align: center;
     }
 }
