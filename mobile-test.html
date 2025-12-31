@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Test - Redirect</title>
+    <script>
+        // Force redirect with cache-busting timestamp
+        const timestamp = new Date().getTime();
+        window.location.href = `https://gupta-garima.github.io/garima24bday/index.html?nocache=${timestamp}`;
+    </script>
+</head>
+
+<body>
+    <p>Redirecting with fresh cache...</p>
+</body>
+
+</html>
