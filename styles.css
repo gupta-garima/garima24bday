@@ -108,7 +108,31 @@ body {
     color: #000000;
     text-transform: uppercase;
     line-height: 1;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+.header-nav {
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.menu-link-btn {
+    background: none;
+    border: none;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+    font-style: italic;
+    transition: all 0.3s ease;
+    padding: 5px 15px;
+}
+
+.menu-link-btn:hover {
+    color: var(--accent-color);
+    transform: scale(1.05);
 }
 
 /* Absolute Screen Corners */
@@ -627,7 +651,8 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 10000;
+    /* Extremely high z-index */
     opacity: 1;
     transition: opacity 0.3s ease;
 }
