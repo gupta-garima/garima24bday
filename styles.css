@@ -226,37 +226,47 @@ body {
         display: flex;
         gap: 15px;
         /* Further reduced gap */
+        align-items: center;
+        /* Center all sections */
     }
 
-    /* Mobile reordering: Add to Queue first, then Spinner, then Drink Queue */
+    /* Mobile reordering: Add to Queue → Spinner → Drink Queue → Bartender/Edit */
+    .entry-card {
+        order: 1;
+        /* Add to Queue appears first */
+    }
+
     .left-column.spinner-section {
         order: 2 !important;
-        /* Force spinner to appear second */
+        /* Spinner appears second */
     }
 
-    .right-column.queue-section-container {
-        order: 1 !important;
-        /* Force queue sections to appear first */
+    .queue-card {
+        order: 3;
+        /* Drink Queue appears third */
+    }
+
+    .bottom-links-section {
+        order: 4;
+        /* Bartender/Edit buttons appear last */
+        width: 100%;
+        text-align: center;
     }
 
     .queue-section-container {
         display: flex;
         flex-direction: column;
-    }
-
-    .entry-card {
-        order: 1;
-        /* Add to Queue appears first within right column */
-    }
-
-    .queue-card {
-        order: 2;
-        /* Drink Queue appears after Add to Queue */
+        width: 100%;
     }
 
     .left-column,
     .right-column {
         min-width: 100%;
+    }
+
+    /* Center all section cards */
+    .section-card {
+        text-align: center;
     }
 }
 
