@@ -271,6 +271,17 @@ body {
     .section-card {
         text-align: center;
     }
+
+    /* Constrain spinner to fit within mobile container */
+    .wheel-container {
+        max-width: 280px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .spinner-section {
+        overflow: hidden;
+    }
 }
 
 header {
