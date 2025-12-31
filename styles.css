@@ -673,26 +673,13 @@ header h1 {
     position: relative;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     z-index: 101;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    z-index: 101;
-    /* Reverting generic modal-content to block for safety, moving flex to specific modal */
     display: block;
     max-height: none;
     overflow: visible;
 }
 
 .menu-items-scroll {
-    flex: 1;
-    /* Take all available space */
-    overflow-y: auto;
-    /* Scroll internally */
-    min-height: 0;
-    /* meaningful min-height for flex items */
-    margin-bottom: 10px;
-    padding: 0 5px;
-    /* prevent scrollbar overlap */
-    -webkit-overflow-scrolling: touch;
-    /* smooth scroll on iOS */
+    margin-bottom: 20px;
 }
 
 /* Botanical Guest Modal */
@@ -706,14 +693,6 @@ header h1 {
 
 .menu-modal-content {
     background-image: none !important;
-    /* Enforce flex layout ONLY for this modal */
-    display: flex !important;
-    flex-direction: column !important;
-    max-height: 85vh !important;
-    width: 95% !important;
-    /* Wider on mobile */
-    padding: 20px !important;
-    overflow: hidden !important;
 }
 
 .close-modal {
