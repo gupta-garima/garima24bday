@@ -340,6 +340,19 @@ body {
     }
 }
 
+/* Small phone optimization (iPhone SE, Mini) */
+@media (max-width: 380px) {
+    .wheel-container {
+        max-width: 250px !important;
+        /* Smaller wheel for small screens */
+    }
+
+    .app-container {
+        padding: 15px 10px;
+        /* Reduce padding to give more room */
+    }
+}
+
 header {
     margin-bottom: 30px;
 }
