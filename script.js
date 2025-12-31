@@ -454,7 +454,7 @@ function renderQueue() {
 
         const span = document.createElement('span');
         const queueNumber = index + 1;
-        span.textContent = `${queueNumber}. ${item.name} - ${item.drink} ${item.status === 'ready' ? ' (Ready to pick up! 🥂)' : ''}`;
+        span.innerHTML = `<span style="color: black; font-weight: bold;">${queueNumber}.</span> ${item.name} - ${item.drink} ${item.status === 'ready' ? ' (Ready to pick up! 🥂)' : ''}`;
 
         li.appendChild(span);
 

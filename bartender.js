@@ -122,7 +122,7 @@ function renderQueue() {
             }
 
             const span = document.createElement('span');
-            span.innerHTML = `<strong style="color:var(--primary-dark)">${index + 1}. ${item.name}</strong> wants a <br><span style="font-size:1.8rem">${item.drink}</span>`;
+            span.innerHTML = `<span style="color: black; font-weight: bold;">${index + 1}.</span> <strong style="color:var(--primary-dark)">${item.name}</strong> wants a <br><span style="font-size:1.8rem">${item.drink}</span>`;
 
             const btnContainer = document.createElement('div');
             btnContainer.style.display = 'flex';
