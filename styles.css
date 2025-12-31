@@ -261,42 +261,33 @@ body {
         box-sizing: border-box;
     }
 
-    /* Spinner appears second (between the queue sections) */
-}
+    .bottom-links-section {
+        order: 4;
+        /* Bartender/Edit buttons appear last */
+        width: 100%;
+        text-align: center;
+    }
 
-.queue-card {
-    order: 3;
-    /* Drink Queue appears third (after spinner) */
-    width: 100%;
-}
+    .left-column,
+    .right-column {
+        min-width: 100%;
+    }
 
-.bottom-links-section {
-    order: 4;
-    /* Bartender/Edit buttons appear last */
-    width: 100%;
-    text-align: center;
-}
+    /* Center all section cards */
+    .section-card {
+        text-align: center;
+    }
 
-.left-column,
-.right-column {
-    min-width: 100%;
-}
+    /* Constrain spinner to fit within mobile container */
+    .wheel-container {
+        max-width: 280px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
 
-/* Center all section cards */
-.section-card {
-    text-align: center;
-}
-
-/* Constrain spinner to fit within mobile container */
-.wheel-container {
-    max-width: 280px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.spinner-section {
-    overflow: hidden;
-}
+    .spinner-section {
+        overflow: hidden;
+    }
 }
 
 header {
