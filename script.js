@@ -448,12 +448,13 @@ function renderQueue() {
     // Filter to show only pending (or recently ready) for the guest list?
     // Let's show all per current UI, but only allow deleting if it's theirs or if they are admin?
     // For now, keep it simple.
-    queue.forEach((item) => {
+    queue.forEach((item, index) => {
         const li = document.createElement('li');
         li.className = `queue-item ${item.status === 'ready' ? 'glow-text-gold' : ''}`;
 
         const span = document.createElement('span');
-        span.textContent = `${item.name} - ${item.drink} ${item.status === 'ready' ? ' (Ready to pick up! 🥂)' : ''}`;
+        const queueNumber = index + 1;
+        span.textContent = `${queueNumber}. ${item.name} - ${item.drink} ${item.status === 'ready' ? ' (Ready to pick up! 🥂)' : ''}`;
 
         li.appendChild(span);
 
