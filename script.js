@@ -428,7 +428,7 @@ function renderQueue() {
         li.className = `queue-item ${item.status === 'ready' ? 'glow-text-gold' : ''}`;
 
         const span = document.createElement('span');
-        span.textContent = `${item.name} - ${item.drink} ${item.status === 'ready' ? '✅' : ''}`;
+        span.textContent = `${item.name} - ${item.drink} ${item.status === 'ready' ? ' (Ready to pick up! 🥂)' : ''}`;
 
         const btn = document.createElement('button');
         btn.className = 'remove-queue-btn';
