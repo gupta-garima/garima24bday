@@ -679,7 +679,12 @@ header h1 {
 }
 
 .menu-items-scroll {
-    margin-bottom: 20px;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    margin-bottom: 10px;
+    padding: 0 5px;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Botanical Guest Modal */
@@ -694,6 +699,12 @@ header h1 {
 .menu-modal-content {
     background-image: none !important;
     border: 4px solid var(--primary-color);
+    display: flex !important;
+    flex-direction: column !important;
+    max-height: 90vh !important;
+    width: 95% !important;
+    overflow: hidden !important;
+    padding: 20px !important;
 }
 
 .close-modal {
