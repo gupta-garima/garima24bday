@@ -31,7 +31,8 @@ body {
     color: var(--text-color);
     min-height: 100vh;
     overflow-x: hidden;
-    padding: 40px;
+    padding: 20px;
+    /* Reduced from 40px for mobile room */
 }
 
 /* Full-page border removed, moved to container */
@@ -143,7 +144,30 @@ body {
 
 @media (max-width: 768px) {
     .viewport-corner {
-        display: none;
+        width: 150px;
+        /* Much smaller on mobile */
+        opacity: 0.7;
+        /* Slightly more subtle */
+    }
+
+    .viewport-corner.top-left {
+        top: -30px;
+        left: -30px;
+    }
+
+    .viewport-corner.top-right {
+        top: -30px;
+        right: -30px;
+    }
+
+    .viewport-corner.bottom-left {
+        bottom: -30px;
+        left: -30px;
+    }
+
+    .viewport-corner.bottom-right {
+        bottom: -30px;
+        right: -30px;
     }
 }
 
@@ -189,7 +213,8 @@ body {
     }
 
     .header-main {
-        font-size: 32px;
+        font-size: 2.5rem;
+        /* Better fit for mobile */
     }
 
     .main-content {
