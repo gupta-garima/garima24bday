@@ -673,12 +673,12 @@ header h1 {
     position: relative;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     z-index: 101;
-    display: flex;
-    flex-direction: column;
-    max-height: 90vh;
-    /* Fixed max height relative to viewport */
-    overflow: hidden;
-    /* Prevent outer scroll */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    z-index: 101;
+    /* Reverting generic modal-content to block for safety, moving flex to specific modal */
+    display: block;
+    max-height: none;
+    overflow: visible;
 }
 
 .menu-items-scroll {
@@ -706,6 +706,14 @@ header h1 {
 
 .menu-modal-content {
     background-image: none !important;
+    /* Enforce flex layout ONLY for this modal */
+    display: flex !important;
+    flex-direction: column !important;
+    max-height: 85vh !important;
+    width: 95% !important;
+    /* Wider on mobile */
+    padding: 20px !important;
+    overflow: hidden !important;
 }
 
 .close-modal {
