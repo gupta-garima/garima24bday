@@ -729,15 +729,7 @@ textarea {
     resize: vertical;
 }
 
-.primary-btn {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 30px;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
+
 }
 
 .glow-text {
