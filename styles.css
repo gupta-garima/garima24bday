@@ -222,6 +222,14 @@ body {
         margin: 0 auto 15px !important;
     }
 
+    .left-column {
+        min-width: 0 !important;   /* remove min-width restriction */
+        width: 100% !important;    /* force full width */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
 }
 
 @media (max-width: 1024px) {
@@ -234,144 +242,76 @@ body {
     }
 }
 
+/* Mobile Optimization for Spinner Section */
 @media (max-width: 768px) {
-    .page-border {
-        border-width: 8px;
-        /* Slightly thicker */
-        top: 6px;
-        left: 6px;
-        right: 6px;
-        bottom: 6px;
-    }
 
-    .app-container {
-        padding: 20px 15px;
-        margin: 15px auto;
-        width: calc(100% - 30px);
-        /* Much less side white space */
-        box-sizing: border-box;
-    }
-
-    .header-container {
-        gap: 15px;
-    }
-
-    .header-icon {
-        width: 60px;
-        /* Shrink on mobile */
-    }
-
-    /* Hide champagne at very small widths if they overlap */
-    @media (max-width: 500px) {
-        .header-icon {
-            display: none;
-        }
-    }
-
-    .header-main {
-        font-size: 1.8rem;
-        /* Smaller, more elegant */
-    }
-
-    .subtitle {
-        font-size: 1.1rem;
-        /* Smaller text */
-        margin-bottom: 20px;
-    }
-
-    .section-card h2,
-    .section-card h3 {
-        font-size: 1.25rem !important;
-        /* Smaller card titles */
-    }
-
+    /* Main content stacks vertically and centers everything */
     .main-content {
-        flex-direction: column;
-        display: flex;
-        gap: 15px;
-        /* Further reduced gap */
-        align-items: center;
-        /* Center all sections */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
     }
 
-    /* Mobile reordering: Add to Queue → Spinner → Drink Queue → Bartender/Edit */
-
-    /* Break apart the queue container so items can be reordered individually */
-    .queue-section-container {
-        display: contents;
-        /* Makes children direct flex items of main-content */
-    }
-
-    .entry-card {
-        order: 1;
-        /* Add to Queue appears first */
-        width: 100%;
-        box-sizing: border-box;
-    }
-
+    /* Spinner Section */
     .left-column.spinner-section {
-        order: 2 !important;
-        /* Spinner appears second */
-        width: 100%;
-        box-sizing: border-box;
+        order: 2 !important;           /* Ensure spinner appears second */
+        width: 100% !important;
+        max-width: none !important;    /* Remove previous width cap */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
         margin: 0 auto !important;
         padding: 0 !important;
     }
 
-    .queue-card {
-        order: 3;
-        /* Drink Queue appears third */
-        width: 100%;
-        box-sizing: border-box;
+    /* Subtitle text */
+    .spinner-section .subtitle {
+        width: 100% !important;
+        max-width: 320px !important;    /* Restrict so text doesn't span too wide */
+        text-align: center !important;
+        margin: 0 auto 20px !important;
+        font-size: 1.1rem !important;
     }
 
-    .bottom-links-section {
-        order: 4;
-        /* Bartender/Edit buttons appear last */
-        width: 100%;
-        text-align: center;
-    }
-
-    .left-column,
-    .right-column {
-        min-width: 100%;
-    }
-
-    /* Constrain spinner to fit within mobile container */
+    /* Wheel container */
     .wheel-container {
-        width: 90%;
-        max-width: 300px;
+        width: 90% !important;          /* Responsive width */
+        max-width: 320px !important;    /* Fit nicely on most phones */
         aspect-ratio: 1 / 1;
         margin: 0 auto 20px;
         display: block;
     }
 
+    /* Canvas inside wheel */
     #wheelCanvas {
         width: 100% !important;
-        height: 100% !important;
+        height: auto !important;
+        max-width: 320px !important;
         display: block;
         margin: 0 auto;
     }
 
-    .spinner-section {
-        width: 100%;
-        max-width: 100%;
-        display: block !important;
-        /* Changed from flex to block to match entry-card */
-        text-align: center;
-        padding: 0 !important;
-        margin: 0 auto !important;
-        position: relative;
-        left: 0;
+    /* Spin button */
+    .spinner-section .controls {
+        width: 100% !important;
+        max-width: 320px !important;    /* Align with wheel width */
+        display: flex !important;
+        justify-content: center !important;
+        margin: 0 auto 20px !important;
     }
 
-    .subtitle {
-        width: 100%;
+    .spin-btn {
+        width: 100% !important;         /* Fill width nicely */
+        max-width: 250px !important;    /* Optional: keeps button from looking too wide */
         text-align: center;
-        padding: 0;
-        margin-bottom: 30px;
+        padding: 12px 0 !important;
     }
+
 }
+
 
 /* Small phone optimization (iPhone SE, Mini) */
 @media (max-width: 380px) {
