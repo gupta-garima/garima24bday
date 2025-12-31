@@ -71,37 +71,17 @@ const colors = [
     "#b39ddb", // Light Purple
 ];
 
-// Resize canvas to match its display size
-function resizeCanvas() {
-    const displayWidth = canvas.clientWidth;
-    const displayHeight = canvas.clientHeight;
-
-    // Check if the canvas is not the same size
-    if (canvas.width !== displayWidth || canvas.height !== displayHeight) {
-        canvas.width = displayWidth;
-        canvas.height = displayHeight;
-        return true; // Canvas was resized
-    }
-    return false; // No resize needed
-}
-
 function drawWheel() {
-    resizeCanvas(); // Call resize function before drawing
     arc = Math.PI * 2 / drinks.length;
 
-    // Get actual canvas dimensions for responsive centering
-    const canvasWidth = canvas.width;
-    const canvasHeight = canvas.height;
-
     // Clear canvas
-    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+    ctx.clearRect(0, 0, 500, 500);
 
-    // Calculate responsive dimensions
-    const centerX = canvasWidth / 2;
-    const centerY = canvasHeight / 2;
-    const outsideRadius = Math.min(canvasWidth, canvasHeight) / 2 - 10; // 10px padding
-    const textRadius = outsideRadius * 0.7; // 70% of radius for text
+    const outsideRadius = 240;
+    const textRadius = 170;
     const insideRadius = 0;
+    const centerX = 250;
+    const centerY = 250;
 
     for (let i = 0; i < drinks.length; i++) {
         const angle = startAngle + i * arc;
@@ -509,18 +489,10 @@ if (resultNameInput) resultNameInput.addEventListener('keypress', (e) => {
 });
 
 // Initial draw & populate
-resizeCanvas(); // Resize canvas to match display size
 drawWheel();
 populateDrinkDropdown();
 initGuestFlow();
 // renderQueue called by Firebase listener
-
-// Handle window resize (orientation changes, etc.)
-window.addEventListener('resize', () => {
-    if (resizeCanvas()) {
-        drawWheel(); // Redraw if canvas was resized
-    }
-});
 
 // QR Code Logic
 const showQrBtn = document.getElementById('showQrBtn');
