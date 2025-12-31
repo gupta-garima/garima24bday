@@ -38,6 +38,7 @@ const resultDrinkName = document.getElementById('resultDrinkName');
 const menuModal = document.getElementById('menuModal');
 const viewMenuBtn = document.getElementById('viewMenuBtn');
 const closeMenuBtn = document.getElementById('closeMenuBtn');
+const backToHomeBtn = document.getElementById('backToHomeBtn');
 
 // Main Drink List (v10)
 let drinks = [
@@ -236,6 +237,10 @@ if (viewMenuBtn) viewMenuBtn.addEventListener('click', () => {
 });
 
 if (closeMenuBtn) closeMenuBtn.addEventListener('click', () => {
+    menuModal.classList.add('hidden');
+});
+
+if (backToHomeBtn) backToHomeBtn.addEventListener('click', () => {
     menuModal.classList.add('hidden');
 });
 
