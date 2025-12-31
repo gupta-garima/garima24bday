@@ -231,19 +231,28 @@ body {
     }
 
     /* Mobile reordering: Add to Queue → Spinner → Drink Queue → Bartender/Edit */
+
+    /* Break apart the queue container so items can be reordered individually */
+    .queue-section-container {
+        display: contents;
+        /* Makes children direct flex items of main-content */
+    }
+
     .entry-card {
         order: 1;
         /* Add to Queue appears first */
+        width: 100%;
     }
 
     .left-column.spinner-section {
         order: 2 !important;
-        /* Spinner appears second */
+        /* Spinner appears second (between the queue sections) */
     }
 
     .queue-card {
         order: 3;
-        /* Drink Queue appears third */
+        /* Drink Queue appears third (after spinner) */
+        width: 100%;
     }
 
     .bottom-links-section {
@@ -251,12 +260,6 @@ body {
         /* Bartender/Edit buttons appear last */
         width: 100%;
         text-align: center;
-    }
-
-    .queue-section-container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
     }
 
     .left-column,
