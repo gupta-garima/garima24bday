@@ -193,9 +193,12 @@ body {
     }
 
     .app-container {
-        padding: 40px 20px;
-        margin: 20px auto;
-        width: calc(100% - 40px);
+        padding: 25px 15px;
+        /* Reduced from 40px 20px */
+        margin: 15px auto;
+        /* Reduced from 20px */
+        width: calc(100% - 30px);
+        /* Reduced from 40px */
         box-sizing: border-box;
         /* Fix centering issue */
     }
@@ -224,17 +227,14 @@ body {
     .main-content {
         flex-direction: column;
         display: flex;
+        gap: 20px;
+        /* Reduced gap between sections */
     }
 
     /* Mobile reordering: Add to Queue first, then Spinner, then Drink Queue */
-    .queue-section-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .entry-card {
+    .right-column {
         order: 1;
-        /* Add to Queue appears first */
+        /* Queue sections appear first */
     }
 
     .spinner-section {
@@ -242,9 +242,19 @@ body {
         /* Spinner appears second */
     }
 
+    .queue-section-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .entry-card {
+        order: 1;
+        /* Add to Queue appears first within right column */
+    }
+
     .queue-card {
-        order: 3;
-        /* Drink Queue appears third */
+        order: 2;
+        /* Drink Queue appears after Add to Queue */
     }
 
     .left-column,
