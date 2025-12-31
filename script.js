@@ -455,13 +455,16 @@ function renderQueue() {
         const span = document.createElement('span');
         span.textContent = `${item.name} - ${item.drink} ${item.status === 'ready' ? ' (Ready to pick up! 🥂)' : ''}`;
 
-        const btn = document.createElement('button');
-        btn.className = 'remove-queue-btn';
-        btn.innerHTML = '&times;';
-        btn.onclick = () => removeFromQueue(item.id);
-
         li.appendChild(span);
-        li.appendChild(btn);
+
+        // Only allow deleting if it's their own drink
+        if (item.name === guestName) {
+            const btn = document.createElement('button');
+            btn.className = 'remove-queue-btn';
+            btn.innerHTML = '&times;';
+            btn.onclick = () => removeFromQueue(item.id);
+            li.appendChild(btn);
+        }
         queueList.appendChild(li);
     });
 }
