@@ -318,7 +318,8 @@ body {
 
     /* Constrain spinner to fit within mobile container */
     .wheel-container {
-        max-width: 300px;
+        max-width: 280px;
+        /* Reduced from 300px to fit iPhone 13 Pro */
         width: 100%;
         aspect-ratio: 1 / 1;
         margin-left: auto !important;
